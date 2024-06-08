@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/markhom/Social-Network-API/issues"
   },
-  "homepage": "https://github.com/markhom/Social-Network-API#readme"
+  "homepage": "https://github.com/markhom/Social-Network-API#readme",
+  "dependencies": {
+    "mongoose": "^8.4.1"
+  }
 }
