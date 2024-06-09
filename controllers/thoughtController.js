@@ -19,7 +19,7 @@ const thoughtController = {
       .select('-__v')
       .then(thoughtData => {
         if (!thoughtData) {
-          return res.status(404).json({ message: 'No thought found with this id!' });
+          return res.status(404).json({ message: 'No thought found with this id.' });
         }
         res.json(thoughtData);
       })
@@ -44,9 +44,9 @@ const thoughtController = {
     })
     .then(userData => {
       if (!userData) {
-        return res.status(404).json({ message: 'Thought created, but no user found with provided userId' });
+        return res.status(404).json({ message: 'Thought created, but no user found with provided userId.' });
       }
-      res.json({ message: 'Thought successfully created!', userData });
+      res.json({ message: 'Thought successfully created.', userData });
     })
     .catch(err => {
       console.log("Error in creating thought or updating user:", err);
@@ -64,7 +64,7 @@ const thoughtController = {
     )
     .then(thoughtData => {
       if (!thoughtData) {
-        return res.status(404).json({ message: 'No thought found with this id!' });
+        return res.status(404).json({ message: 'No thought found with this id.' });
       }
       res.json(thoughtData);
     })
@@ -76,9 +76,9 @@ const thoughtController = {
     Thought.findOneAndDelete({ _id: req.params.id })
       .then(thoughtData => {
         if (!thoughtData) {
-          return res.status(404).json({ message: 'No thought found with this id!' });
+          return res.status(404).json({ message: 'No thought found with this id.' });
         }
-        res.json({ message: 'Thought successfully deleted!' });
+        res.json({ message: 'Thought successfully deleted.' });
       })
       .catch(err => res.status(400).json(err));
   },
@@ -92,7 +92,7 @@ const thoughtController = {
     )
     .then(thoughtData => {
       if (!thoughtData) {
-        return res.status(404).json({ message: 'No thought found with this id!' });
+        return res.status(404).json({ message: 'No thought found with this id.' });
       }
       res.json(thoughtData);
     })
@@ -108,9 +108,9 @@ const thoughtController = {
     )
     .then(thoughtData => {
       if (!thoughtData) {
-        return res.status(404).json({ message: 'No thought found with this id!' });
+        return res.status(404).json({ message: 'No thought found with this id.' });
       }
-      res.json({ message: 'Reaction successfully removed!' });
+      res.json({ message: 'Reaction successfully removed.' });
     })
     .catch(err => res.status(400).json(err));
   }

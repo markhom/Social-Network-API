@@ -23,7 +23,7 @@ const userController = {
       .select('-__v')
       .then(userData => {
         if (!userData) {
-          res.status(404).json({ message: 'No user found with this ID!' });
+          res.status(404).json({ message: 'No user found with this ID.' });
           return;
         }
         res.json(userData);
@@ -46,7 +46,7 @@ const userController = {
     User.findOneAndUpdate({ _id: params.id }, body, { new: true, runValidators: true })
       .then(userData => {
         if (!userData) {
-          res.status(404).json({ message: 'No user found with this ID!' });
+          res.status(404).json({ message: 'No user found with this ID.' });
           return;
         }
         res.json(userData);
@@ -59,11 +59,10 @@ const userController = {
     User.findOneAndDelete({ _id: params.id })
       .then(userData => {
         if (!userData) {
-          res.status(404).json({ message: 'No user found with this ID!' });
+          res.status(404).json({ message: 'No user found with this ID.' });
           return;
         }
-        res.json({ message: 'User successfully deleted!' });
-        // Bonus: Delete the user's thoughts here if you wish
+        res.json({ message: 'User successfully deleted.' });
       })
       .catch(err => res.status(400).json(err));
   },
@@ -82,7 +81,7 @@ const userController = {
     .select('-__v')
     .then(userData => {
       if (!userData) {
-        res.status(404).json({ message: 'No user found with this ID!' });
+        res.status(404).json({ message: 'No user found with this ID.' });
         return;
       }
       res.json(userData);
@@ -99,10 +98,10 @@ const userController = {
     )
     .then(userData => {
       if (!userData) {
-        res.status(404).json({ message: 'No user found with this ID!' });
+        res.status(404).json({ message: 'No user found with this ID.' });
         return;
       }
-      res.json({ message: 'Friend removed successfully!' });
+      res.json({ message: 'Friend removed successfully.' });
     })
     .catch(err => res.json(err));
   }
